@@ -13,9 +13,11 @@ import Settings from './classes/Settings'; // настройки игры
 import Validator from './classes/Validator'; // проверка имя пользователя
 import ArrayBufferConverter from './classes/ArrayBufferConverter'; // загрузка и конвертации данных из ArrayBuffer
 import GameSavingLoader from './classes/GameSavingLoader'; //
+import 'regenerator-runtime/runtime';
 
 GameSavingLoader.load().then((saving) => {
   console.log(saving);
+  return saving;
 }, (error) => {
   console.log(error);
 });
